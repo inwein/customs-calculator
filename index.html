@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/3c3ccda155.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Калькулятор автомобилей — AGAT T</title>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="menu">
+            <a href="http://agat-t.com"><img src="logo.png" alt="logo"></a>
+            <ul class="desktop-menu">
+                <li><a href="http://agat-t.com">Главная</a></li>
+                <li><a href="http://agat-t.com/services">Услуги</a></li >
+                <li><a href="http://agat-t.com/about">О нас</a></li>
+                <li><a href="http://agat-t.com/contact">Контакты</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="mobile-menu-drawer">
+                <ul>
+                    <li><a href="http://agat-t.com">Главная</a></li>
+                    <li><a href="http://agat-t.com/services">Услуги</a></li >
+                    <li><a href="http://agat-t.com/about">О нас</a></li>
+                    <li><a href="http://agat-t.com/contact">Контакты</a></li>
+                </ul>    
+            </div>
+        </div>
+        <div class="title">
+            <i class="fas fa-calculator"></i>
+            <h2>Калькулятор</h2>
+            <span> ————— для легковых автомобилей —————   </span>
+        </div>
+    </div>
+    <!-- Header -->
+    <!-- Calculator form -->
+<div class="customs-whole-form-holder">
+    <div class="customs-calculator-form">
+        <div class="type-of-engine">
+            <span class="field-title">Тип двигателя</span>
+            <div>
+                <form id="engine-type">
+                    <input type="radio" name="engine-type" value="petrol" checked="true"/>
+                    <label for="petrol">бензин</label>
+                    <input type="radio" name="engine-type" value="diesel"/>
+                    <label for="petrol">дизель</label>
+                    <input type="radio" name="engine-type" value="electro"/>
+                    <label for="electro">электро</label>
+                    <input type="radio" name="engine-type" value="hybrid"/>
+                    <label for="hybrid">гибрид</label>
+                </form>
+            </div>
+        </div>
+        <div class="engine-capacity">
+            <span class="field-title">Объем двигателя в <span id="engineMetric">куб.см.</span> </span>
+            <form id="capacity">
+                <input type="number" name="engine-capacity" placeholder="1998">
+            </form>
+        </div>
+        <div class="year-manufactured">
+            <span class="field-title">Год производства</span>
+            <form id="year">
+                <select></select>
+            </form>
+        </div>
+        <div class="price-of-car">
+            <span class="field-title">Стоимость авто</span>
+            <div>
+                <form id="price">
+                    <input type="number" name="price-of-car">
+                </form>
+                <form id="currency">
+                    <select>
+                        <option value="USD">USD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="AED">AED</option>
+                        <option value="PLN">PLN</option>
+                        <option value="BGN">BGN</option>
+                    </select>
+                </form>
+            </div>
+        </div>
+        <div class="importer">
+            <span class="field-title">Импортер</span>
+            <div>
+                <form id="importer">
+                    <input type="radio" name="importer" value="person" checked>
+                    <label for="person">Физическое лицо</label>
+                    <input type="radio" name="importer" value="company">
+                    <label for="person">Юридическое лицо</label>
+                </form>
+            </div>
+        </div>
+        <div class="eur-one" hidden='true'>
+            <span class="field-title">EUR.1</span>
+            <div>
+                <form id="eur-one">
+                    <input type="radio" name="eur1" value="true">
+                    <label for="person">Да</label>
+                    <input type="radio" name="eur1" value="false" checked>
+                    <label for="person">Нет</label>
+                </form>
+            </div>
+        </div>
+        <div class="submit-button-holder">
+            <button id="countCustomsButton">Посчитать</button>
+        </div>
+    </div>
+    <!-- Calculator Form -->
+    <!-- Customs calculation results -->
+    <div class="calculation-results">
+        <h3>Таможенные платежи<span id="totalInCurrency"></span></h3>
+        <p>по курсу НБУ на день оформления</p>
+        <span id='currentRateCheck' class="current-rate-check"></span>
+        <table>
+            <thead>
+                <tr>
+                    <td>Вид платежа</td>
+                    <td>Основа начисления</td>
+                    <td>Ставка</td>
+                    <td>Сумма</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Пошлина</td>
+                    <td id="tollRow2"></td>
+                    <td id="tollRow3"></td>
+                    <td id="tollRow4"></td>
+                </tr>
+                <tr>
+                    <td>Акциз</td>
+                    <td id="exciseRow2"></td>
+                    <td id="exciseRow3"></td>
+                    <td id="exciseRow4"></td>
+                </tr>
+                <tr>
+                    <td>НДС</td>
+                    <td id="vatRow2"></td>
+                    <td id="vatRow3"></td>
+                    <td id="vatRow4"></td>
+                </tr>
+                <tr>
+                    <td>Всего</td>
+                    <td colspan="3" id="totalRow2" style="font-weight: 500;"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+   <!-- Custom calculation results -->
+   <!-- Additional costs -->
+<div class="additional-options">
+    <div class="question-block">
+        <h3>Дополнительные затраты</h3>
+        <div class="divider"></div>
+        <span>Чтобы узнать сумму дополнительных затрат <br> выберите подходящие ответы внизу:</span>
+        <p>В какой стране приобретен авто?</p>
+        <form id='countryBought'>
+            <input type="radio" name="country" value="usa" checked>
+            <label for="usa">Америка</label>
+            <input type="radio" name="country" value="europe">
+            <label for="europe">Европа</label>
+            <input type="radio" name="country" value="georgia">
+            <label for="georgia">Грузия</label>
+            <input type="radio" name="country" value="emirates">
+            <label for="emirates">Эмираты</label>
+        </form>
+        <p>В каком городе планируете оформлять авто?</p>
+        <form id="cityServicing"> 
+            <input type="radio" name="city" value="odessa" checked>
+            <label for="odessa">Одесса</label>
+            <input type="radio" name="city" value="zaporozhye">
+            <label for="zaporozhye">Запорожье</label>
+        </form>
+        <div class="divider"></div>
+        <button id="countAdditionalOptions">Посчитать</button>
+    </div>
+    <div class="answers-block">
+        <div class="left-answers">
+            <div class="answer-box" id="broker">
+                <span>-</span>
+                <p>Услуги брокера</p>
+            </div>
+            <div class="answer-box" id="terminal">
+                <span>?</span>
+                <p>Въезд на терминал</p>
+            </div>
+        </div>
+        <div class="right-answers">
+            <div class="answer-box" id="sertification">
+                <span>&</span>
+                <p>Сертификация</p>
+            </div>
+            <div class="answer-box" id="registration">
+                <span>%</span>
+                <p>Постановка на учет</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="total-cost-block">
+    <h3>Общие затраты на импорт авто:</h3>
+    <div class="two-results-holder">
+        <div class="total-result-holder">
+            <span id="totalCostUah">₴</span>
+        </div>
+        <span> или </span>
+        <div class="total-result-holder">
+            <span id="totalCostUsd">$</span>
+        </div>
+    </div>
+    <p id="whatIncluded"></p>
+</div>
+<div class="footer">
+    <div class="content-holder">
+        <div class="footer-identity">
+            <img src="logo-footer.png" alt="logo-footer">
+            <h3>
+                Запорожье
+                <br>
+                Одесса
+            </h3>
+        </div>
+        <div class="about-us">
+            <h4>О нас</h4>
+            <span><a href="https://agat-t.com/about/">История компании</a></span>
+            <span><a href="https://agat-t.com/services/">Предоставляемые услуги</a></span>
+            <span><a href="#">Наши публикации</a></span>
+            <span><a href="https://agat-t.com/contact/">Контактные данные</a></span>        
+        </div>
+        <div class="helpful-links">
+            <h4>Полезные ссылки</h4>
+            <a href="#"><span>Таможенный калькулятор для авто</span></a>
+            <a href="#"><span>Базовые документы для импорта</span></a>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,649 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+.header {
+    background-color: #2d2d2d;
+    width: 100%;
+    height: 60vh;
+    min-height: 350px;
+}
+.menu {
+    padding: 30px 80px;
+    display: flex;
+    justify-content: space-between;
+}
+.mobile-menu {
+    display: none;
+    color: #ffffff;
+}
+.mobile-menu .fas {
+    font-size: 25px;
+}
+.mobile-menu-drawer {
+    position: fixed;
+    top: 0;
+    display: none;
+    left: -900px;
+    height: 100%;
+    width: 50%;
+    background-color: #1A6C7A;
+    color: #ffffff;
+    transition: all .7s ease-in-out;
+}
+.mobile-menu-drawer li {
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    padding: 20px 0;
+}
+.mobile-menu-drawer ul {
+    padding: 0;
+}
+.mobile-menu-drawer a {
+    padding: 0;
+}
+.menu img {
+    width: 180px;
+    height: 40px;
+}
+.menu ul {
+    list-style: none;
+}
+.menu ul a {
+    text-decoration: none;
+    color: rgba(255,255,255,0.75);
+    padding: 16px;
+    transition: all .5s;
+}
+.menu ul a:hover {
+    color: #ffffff;
+}
+.menu .desktop-menu {
+    display: inline-flex;  
+}
+.title {
+    color: #ffffff;
+    text-align: center;
+}
+.title i {
+    color: #ffffff;
+}
+.fa-calculator {
+    font-size: 50px;
+}
+.title h2 {
+    font-size: 28px;
+    font-weight: normal;
+    letter-spacing: 2.5px;
+}
+.title span {
+    color: #BDBDBD;
+    font-size: 15px;
+    max-width: 95%;
+    box-sizing: border-box;
+}
+/* Customs calculator */
+.customs-whole-form-holder {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: auto;
+    padding: 50px 0 60px 0;
+    background-color: #2d2d2d;
+}
+.customs-calculator-form {
+    width: 500px;
+    background-color: #424242;
+    border-radius: 10px;
+    color: #ffffff
+}
+.customs-calculator-form label {
+    font-size: 14px;
+}
+.customs-calculator-form .field-title {
+    font-weight: 500;
+    font-size: 18px;
+}
+.type-of-engine {
+    padding: 20px 15px;
+    border-bottom: 1px solid #2d2d2d;
+}
+.type-of-engine div {
+    padding-top: 10px;
+}
+.type-of-engine div label {
+    margin-right: 10px;
+}
+.engine-capacity {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 15px;
+    border-bottom: 1px solid #2d2d2d;    
+}
+.engine-capacity input {
+    max-width: 200px;
+    margin-top: 10px;
+    outline: none;
+}
+.year-manufactured {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 15px;
+    border-bottom: 1px solid #2d2d2d;
+}
+.year-manufactured select {
+    max-width: 120px;
+    margin-top: 10px;
+    outline: none;
+}
+.price-of-car {
+    padding: 20px 15px;
+    border-bottom: 1px solid #2d2d2d;    
+}
+.price-of-car div {
+    margin-top: 10px;
+    display: flex;
+}
+.price-of-car input {
+    outline: none;
+}
+.price-of-car select {
+    padding: 1px;
+    outline: none;
+    margin-left: 5px;
+}
+.importer {
+    padding: 20px 15px;
+    border-bottom: 1px solid #2d2d2d;
+}
+.importer label {
+    margin-right: 10px;
+}
+.importer div {
+    margin-top: 10px;
+}
+.eur-one {
+    padding: 20px 15px;
+    border-bottom: 1px solid #2d2d2d;
+}
+.eur-one label {
+    margin-right: 10px;
+}
+.eur-one div {
+    margin-top: 10px;
+}
+.submit-button-holder {
+    text-align: center;
+}
+.submit-button-holder button {
+    margin: 20px auto;
+    padding: 16px 40px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 0;
+    background-color: none;
+    min-width: 180px;
+    background-color: #424242;
+    border: 1px solid #1A6C7A;
+    color: #ffffff;
+    font-weight: 600;
+    outline: none;
+    transition: all .4s;
+}
+.submit-button-holder button:hover , button:active {
+    color: #ffffff;
+    background-color: #1A6C7A;
+}
+.calculation-results {
+    min-width: 50%;
+    text-align: center;
+}
+.calculation-results h3 {
+    color: #f5f5f5;
+    font-weight: 500;
+    margin: 20px 0 0 0;
+}
+.calculation-results h3 span {
+    font-weight: 600;
+}
+.calculation-results p {
+    margin: 8px 0;
+    color: #ffffff;
+}
+.calculation-results .current-rate-check {
+    color: #f5f5f5;
+}
+.calculation-results table {
+    background-color: #f5f5f5;
+    color: #212121;
+    margin: 10px auto;
+    border-collapse: collapse;
+    border-radius: 10px;
+}
+.calculation-results thead td {
+    padding: 10px 30px;
+    font-weight: 500;
+    font-size: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+.calculation-results tbody td {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 15px 30px;
+}
+/* Additional Costs */
+.additional-options {
+    background-color: #2d2d2d;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.question-block {
+    margin-top: 100px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 50px;
+    color: #ffffff;
+}
+.question-block span {
+    color: #BDBDBD;
+    font-weight: 500;
+}
+.question-block .divider {
+    background-color: #625f5f;
+    width: 100px;
+    height: 3px;
+    margin: 20px 0;
+}
+.question-block h3 {
+    letter-spacing: 2.5px;
+    text-transform: lowercase;
+    font-size: 28px;
+    color:#ffffff;
+    margin: 0;
+}
+.question-block p {
+    margin: 10px 0 5px 0;
+    color: #BDBDBD;
+}
+.question-block button {
+    padding: 16px 40px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 0;
+    background-color: none;
+    max-width: 180px;
+    border: 1px solid #1A6C7A;
+    background-color: #2d2d2d;
+    color: #1A6C7A;
+    font-weight: 600;
+    outline: none;
+    transition: all .4s;    
+}
+.question-block button:hover , button:active {
+    color: #ffffff;
+    background-color: #1A6C7A;
+}
+.answers-block {
+    height: 100%;
+    display: flex;
+    color: #ffffff;
+    margin-bottom: 50px; 
+}
+.left-answers {
+    width: 50%;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.right-answers {
+    width: 50%;
+    padding-top: 120px;
+}
+.answer-box {
+    color: #ffffff;
+    background-color: #424242;
+    width: 220px;
+    height: 190px;
+    text-align: center;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    transition: all .3s ease-in;
+}
+.answer-box p { 
+    margin: 0;
+    color: #BDBDBD;
+}
+.answer-box:hover {
+    background-color: #BDBDBD;
+    color: #424242;
+    cursor: pointer;
+}
+.answer-box:hover p {
+    color: #424242;
+}
+.answer-box span {
+    font-size: 32px;
+    font-weight: 500;
+}
+/* Total Results  */
+.total-cost-block {
+    width: 100%;
+    padding: 100px 0 150px 0;
+    text-align: center;
+}
+.total-cost-block h3 {
+    color: #2d2d2d;
+    letter-spacing: 2px;
+    font-size: 32px;
+    text-align: center;
+}
+.total-cost-block p {
+    max-width: 50%;
+    margin: 20px auto;
+}
+.two-results-holder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.two-results-holder span {
+    margin: 0 20px;
+}
+.total-result-holder {
+    width: 220px;
+    height: 180px;
+    background-color: #e5e5e5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    transition: all .3s ease-in
+}
+.total-result-holder span {
+    font-size: 32px;
+    font-weight: 500;
+}
+.total-result-holder:hover {
+    background-color: #424242;
+    color: #ffffff
+}
+.footer .content-holder a {
+    text-decoration: none;
+    color: #7a7a7a;
+}
+.footer .content-holder {
+    margin: 50px 100px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.footer .footer-identity {
+    color: #1A6C7A;
+    letter-spacing: 1px;
+    line-height: 1.5em;
+    width: 33%;
+}
+.footer .footer-identity h3 {
+    font-size: 15px;
+}
+.footer .footer-identity img {
+    width: 180px;
+    height: 40px;
+}
+.footer .about-us {
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+}
+.footer .about-us h4 {
+    margin: 0 0 20px 0;
+    font-size: 19px;
+    color: #000f2b;
+}
+.footer .about-us span {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+.footer .helpful-links {
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+}
+.footer .helpful-links h4 {
+    margin: 0 0 20px 0;
+    font-size: 19px;
+    color: #000f2b;
+}
+.footer .helpful-links span {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+/* Media Queries */
+@media (max-width: 768px) {
+    .header {
+        height: 40vh;
+        min-height: 40vh;
+    }
+    .menu {
+        padding: 20px;
+        align-items: center;
+    }
+    .menu .desktop-menu {
+        display: none;
+    }
+    .mobile-menu {
+        display: block;
+        width: 45px;
+        height: 45px;
+        background-color: #1A6C7A;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        right: 20px;
+        top: 10px;
+    }
+    .mobile-menu-drawer {
+        display: block;
+    }
+    .menu img {
+        width: 140px;
+        height: 30px;
+    }
+    .title h2 {
+        font-size: 26px;
+    }
+    .footer .footer-identity {
+        width: 100%;
+        text-align: center;
+    }
+    .footer .about-us {
+        width: 100%;
+        text-align: center;
+    }
+    .footer .helpful-links {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+}
+@media (max-width: 576px) {
+    .header {
+        height: auto;
+    }
+    .mobile-menu-drawer {
+        width: 70%;
+    }
+    .title h2 {
+        font-size: 24px;
+    }
+    .title span {
+        font-size: 12px;
+    }
+    .customs-whole-form-holder {
+        padding-bottom: 0px;
+    }
+    .customs-calculator-form {
+        width: 80%;
+    }
+    .customs-calculator-form .field-title {
+        font-size: 14px;
+    }
+    .type-of-engine div {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .type-of-engine div label {
+        margin-right: 5px;
+        font-size: 10px;
+    }
+    .type-of-engine div input {
+        margin: 0;
+    }
+    .importer label {
+        font-size: 10px;
+        margin-right: 5px;
+    }
+    .importer input {
+        margin: 0;
+    }
+    .submit-button-holder button {
+        font-size: 10px;
+        min-width: 140px;
+    }
+    .calculation-results h3 {
+        font-size: 14px;
+    }
+    .calculation-results p {
+        font-size: 12px;
+    }
+    .calculation-results .current-rate-check {
+        font-size: 12px;
+    }
+    .calculation-results thead td {
+        font-size: 10px;
+        padding: 5px 10px;
+    }
+    .calculation-results tbody td {
+        font-size: 10px;
+        padding: 5px 10px;
+    }
+    .question-block {
+        padding-left: 0;
+        font-size: 12px;
+        text-align: center;
+    }
+    .question-block h3 {
+        font-size: 22px;
+    }
+    .question-block button {
+        font-size: 10px;
+        min-width: 140px;
+        margin: auto;
+    }
+    .answers-block {
+        justify-content: space-around;
+    }
+    .answer-box {
+        width: 150px;
+        height: 130px;
+    }
+    .answer-box span {
+        font-size: 16px;
+    }
+    .answer-box p {
+        font-size: 10px;
+    }
+    .total-cost-block {
+        padding: 50px 0 75px 0;
+    }
+    .total-cost-block h3 {
+        font-size: 18px;
+        width: 80%;
+        text-align: center;
+        margin: 20px auto;
+    }
+    .total-result-holder {
+        width: 150px;
+        height: 130px;
+    }
+    .two-results-holder span {
+        margin: 0 10px;
+    }
+    .total-result-holder span {
+        font-size: 22px;
+    }    
+    .total-cost-block p {
+        max-width: 80%;
+        font-size: 12px;
+        margin: 20px auto;
+    }
+    .footer .about-us h4 {
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+    .footer .about-us span {
+        font-size: 12px;
+    }
+    .footer .helpful-links  h4{
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+    .footer .helpful-links span {
+        font-size: 12px;
+    }
+}
+@media (max-width: 360px) {
+    .header {
+        height: 45vh;
+        min-height: 45vh;
+    }
+    .customs-whole-form-holder {
+        padding: 0px;
+    }
+    .customs-calculator-form {
+        width: 90%;
+    }
+    .calculation-results thead td {
+        padding: 5px 5px;
+    }
+    .calculation-results tbody td {
+        padding: 5px 5px;
+    }
+    .left-answers {
+        padding-top: 40px;
+    }
+    .right-answers {
+        padding-top: 60px;
+    }
+    .answer-box {
+        margin: 0 10px 10px 0;
+        width: 130px;
+        height: 110px;
+    }
+    .total-result-holder {
+        width: 130px;
+        height: 110px;
+    }
+    .footer .content-holder {
+        margin: 0
+    }    
+    .footer .footer-identity img {
+        margin: auto;
+    }
+
+}
